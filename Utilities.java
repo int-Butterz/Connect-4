@@ -19,7 +19,7 @@ public class Utilities {
 
     public static void boardAssembler() {
         String body = "";
-        String line = lineMaker(INNER_BOARD);
+        String line = "\u001B[34m" + lineMaker(INNER_BOARD);
         String numberIndicator = String.format(INNER_BOARD, " 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ");
 
         for (int i = 0; i < 6; i++) {
@@ -46,8 +46,8 @@ public class Utilities {
     // Methods for Winner detection
 
     public static String[][] players = {
-            {"Player 1", " X ", "0"},
-            {"Player 2", " O ", "0"},
+            {"Player 1", "\u001B[31m" + " X " + "\u001B[34m", "0"},
+            {"Player 2", "\u001B[33m" + " O " + "\u001B[34m", "0"},
             {"Stalemates", "", "0"},
     };
 
@@ -64,13 +64,23 @@ public class Utilities {
         boolean result = false;
         for (int i = 3; i < board.length; i++) {
             for (int j = 3; j < board[i].length; j++) {
-                if (equivalent(board[i][j-3], board[i-1][j-2], board[i-2][j-1], board[i-3][j])) { // checks for \
+                if (equivalent(board[i][j-3], board[i-1][j-2], board[i-2][j-1], board[i-3][j])) { // checks for /
                     result = true; break;
-                } else if (equivalent(board[i-3][j-3], board[i-2][j-2], board[i-1][j-1], board[i][j])) { // checks for /
+                } else if (equivalent(board[i-3][j-3], board[i-2][j-2], board[i-1][j-1], board[i][j])) { // checks for \
                     result = true; break;
                 }
             }
         }
+        return result;
+    }
+
+    public static boolean horizontalChecker(String[][] board) {
+        boolean result = false;
+
+        for (int i = 3; i < board.length; i++) {
+
+        }
+
         return result;
     }
 }
