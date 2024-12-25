@@ -74,13 +74,25 @@ public class Utilities {
         return result;
     }
 
-    public static boolean horizontalChecker(String[][] board) {
+    public static boolean straightLineChecker(String[][] board, boolean vertical) {
         boolean result = false;
-
-        for (int i = 3; i < board.length; i++) {
-
+        if (vertical) {
+            for (int i = 0; i < board[0].length; i++) {
+                for (int j = 3; j < board.length; j++) {
+                    if (equivalent(board[j][i], board[j-1][i], board[j-2][i], board[j-3][i])) {
+                        result = true; break;
+                    }
+                }
+            }
+        } else {
+            for (int i = 0; i < board.length; i++) {
+                for (int j = 3; j < board[0].length; j++) {
+                    if (equivalent(board[i][j], board[i][j-1], board[i][j-2], board[i][j-3])) {
+                        result = true; break;
+                    }
+                }
+            }
         }
-
         return result;
     }
 }
