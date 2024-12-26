@@ -7,18 +7,17 @@ public class Utilities {
     // Methods for the board
     static final String SPACE_1 = "";
     static final String SPACE_2 = " ";
-    public static final String SELECT = "\nSelect the column that you to place a token inside of: ";
+    public static final String SELECT = "\nSelect the column that you want to place a token in: ";
     public static final String PLAYER_TURN = "\u001B[0m" + "\n%s's turn";
     public static String playerScore = "\n|%-10s|%-10s|%-10s|";
     //Board Output
     public static final String INNER_BOARD = "\n||%3s|%3s|%3s|%3s|%3s|%3s|%3s||";
     public static final String SEPERATOR = "=";
     //Error Messages
-    public static final String INVALID_OPTION = "Invalid option!";
-    public static final String INVALID_INPUT = "Invalid input!";
-    public static final String INVALID_SPACE = "Selected space is either invalid or already claimed.";
+    public static final String INVALID_OPTION = "\u001B[0m" + "Invalid option!";
+    public static final String INVALID_INPUT = "\u001B[0m" + "Invalid input!";
     //Yes or No
-    public static final String REMATCH = "\nWould you like to play again? (Y/N): ";
+    public static final String REMATCH = "\u001B[0m" + "\nWould you like to play again? (Y/N): ";
     public static final String YES = "Y";
     public static final String NO = "N";
     //Menu
@@ -26,8 +25,8 @@ public class Utilities {
     public static final String OPTIONS = "\n1. Play game\n2. Exit\n";
     public static final String SALUTATIONS = "\nThank you for playing!";
     // Victory
-    public static final String WINNER = "\n%s is the winner!\n";
-    public static final String STALEMATE = "\nThe game ended on a stalemate.";
+    public static final String WINNER = "\u001B[0m" + "\n%s is the winner!";
+    public static final String STALEMATE = "\u001B[0m" + "\nThe game ended on a stalemate.";
 
     public static String lineMaker(String ref) {
         String line = "\n";
@@ -64,7 +63,6 @@ public class Utilities {
     }
 
     // Methods for Winner detection
-
     public static String[][] players = {
             {"Player 1", "\u001B[31m" + " X " + "\u001B[34m", "0"},
             {"Player 2", "\u001B[33m" + " O " + "\u001B[34m", "0"},

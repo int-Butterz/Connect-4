@@ -4,7 +4,7 @@ public class Validate {
     public static Scanner sc = new Scanner(System.in);
 
     public static void columnSelection(String message, int max, int min, String[] player) {
-        System.out.println(message);
+        System.out.print(message);
         while (true) {
             try {
                 int number = Integer.parseInt(sc.nextLine());

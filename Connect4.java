@@ -33,6 +33,7 @@ public class Connect4 {
     public static void game(String[][] board) {
         int turnCounter = 0;
         String[] player;
+        boolean stalemate = false;
 
         Utilities.boardAssembler();
         do {
@@ -43,10 +44,14 @@ public class Connect4 {
             turnCounter++;
             if (!Utilities.hasSpace(board)) {
                 player = Utilities.players[2];
-                break;
+                stalemate = true; break;
             }
         } while (Utilities.diagonalChecker(board) && Utilities.straightLineChecker(board));
-
+        if (stalemate) {
+            System.out.print(Utilities.STALEMATE);
+        } else {
+            System.out.printf(Utilities.WINNER, player[0]);
+        }
         scoreTracker(player[0]);
     }
 
@@ -75,8 +80,8 @@ public class Connect4 {
                     board[i-1][column-1] = player[1]; break;
                 }
             }
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("This column is full, please select one that is empty.");
+        } catch (ArrayIndexOutOfBoundsException e) { // In theory, this exception should only be triggered when a user tries to place a token in a column that`s already full
+            System.out.print("This column is full, please select one that is empty.");
             Validate.columnSelection(Utilities.SELECT, board[0].length, 1, player);
         }
     }
@@ -94,6 +99,6 @@ public class Connect4 {
         String line = Utilities.lineMaker(head);
 
 
-        System.out.printf(line + head + line + body + line);
+        System.out.printf("\u001B[0m" + line + head + line + body + line);
     }
 }
