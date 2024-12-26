@@ -31,7 +31,7 @@ public class Connect4 {
     }
 
     public static void game(String[][] board) {
-        int turnCounter = (int)(Math.random()*10);
+        int turnCounter = (int)(Math.random()*2);
         String[] player;
         boolean stalemate = false;
 

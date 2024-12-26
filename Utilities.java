@@ -6,7 +6,7 @@ public class Utilities {
     static final String SPACE_1 = "";
     static final String SPACE_2 = " ";
     public static final String SELECT = "\nSelect the column that you want to place a token in: ";
-    public static final String PLAYER_TURN = "\u001B[0m" + "\n%s's turn";
+    public static final String PLAYER_TURN = "\u001B[0m" + "\nTurn: %s";
     public static String playerScore = "\n|%-10s|%-10s|%-10s|";
     //Board Output
     public static final String INNER_BOARD = "\n||%3s|%3s|%3s|%3s|%3s|%3s|%3s||";
