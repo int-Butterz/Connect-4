@@ -38,7 +38,7 @@ public class Validate {
     public static int selectOption() {
         int number = 0;
         boolean valid = false;
-        String line = Utilities.lineMaker(Utilities.TITLE);
+        String line = Utilities.lineMaker(Utilities.TITLE, 1);
 
         while (!valid) {
             System.out.printf(line + Utilities.TITLE + line + Utilities.OPTIONS);

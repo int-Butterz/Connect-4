@@ -26,9 +26,9 @@ public class Utilities {
     public static final String WINNER = "\u001B[0m" + "\n%s is the winner!";
     public static final String STALEMATE = "\u001B[0m" + "\nThe game ended on a stalemate.";
 
-    public static String lineMaker(String ref) {
+    public static String lineMaker(String ref, int reduction) {
         String line = "\n";
-        for (int i = 0; i < ref.length()-1; i++) {
+        for (int i = 0; i < ref.length()-reduction; i++) {
             line += SEPERATOR;
         }
         return line;
@@ -36,7 +36,7 @@ public class Utilities {
 
     public static void boardAssembler() {
         String body = "";
-        String line = "\u001B[34m" + lineMaker(INNER_BOARD);
+        String line = "\u001B[34m" + lineMaker(INNER_BOARD, 1);
         String numberIndicator = String.format(INNER_BOARD," 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ");
 
         for (int i = 0; i < 6; i++) {
@@ -62,8 +62,8 @@ public class Utilities {
 
     // Methods for Winner detection
     public static String[][] players = {
-            {"Player 1", "\u001B[31m" + " X " + "\u001B[34m", "0"},
-            {"Player 2", "\u001B[33m" + " O " + "\u001B[34m", "0"},
+            {"\u001B[31m" + "Player 1 " + "\u001B[97m", "\u001B[31m" + " X " + "\u001B[34m", "0"},
+            {"\u001B[33m" + "Player 2 " + "\u001B[97m", "\u001B[33m" + " O " + "\u001B[34m", "0"},
             {"Stalemates", "", "0"},
     };
 

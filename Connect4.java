@@ -31,7 +31,7 @@ public class Connect4 {
     }
 
     public static void game(String[][] board) {
-        int turnCounter = 0;
+        int turnCounter = (int)(Math.random()*10);
         String[] player;
         boolean stalemate = false;
 
@@ -96,7 +96,7 @@ public class Connect4 {
 
         String head = String.format(Utilities.playerScore, " " + Utilities.players[0][0], Utilities.players[2][0], " " + Utilities.players[1][0]);
         String body = String.format(Utilities.playerScore, Utilities.players[0][2], Utilities.players[2][2], Utilities.players[1][2]);
-        String line = Utilities.lineMaker(head);
+        String line = Utilities.lineMaker(head, 21);
 
 
         System.out.printf("\u001B[0m" + line + head + line + body + line);
