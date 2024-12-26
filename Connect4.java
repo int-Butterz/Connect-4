@@ -42,7 +42,7 @@ public class Connect4 {
             Utilities.boardAssembler();
 
             turnCounter++;
-            if (!Utilities.hasSpace(board)) {
+            if (!Utilities.hasSpace(board) && !(Utilities.diagonalChecker(board) && Utilities.straightLineChecker(board))) {
                 player = Utilities.players[2];
                 stalemate = true; break;
             }

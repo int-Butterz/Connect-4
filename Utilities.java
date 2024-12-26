@@ -23,7 +23,7 @@ public class Utilities {
     public static final String OPTIONS = "\n1. Play game\n2. Exit\n";
     public static final String SALUTATIONS = "\nThank you for playing!";
     // Victory
-    public static final String WINNER = "\u001B[0m" + "\n%s is the winner!";
+    public static final String WINNER = "\u001B[0m" + "\nVictor: %s";
     public static final String STALEMATE = "\u001B[0m" + "\nThe game ended on a stalemate.";
 
     public static String lineMaker(String ref, int reduction) {
