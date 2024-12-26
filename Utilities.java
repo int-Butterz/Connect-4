@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 public class Utilities {
 
     public static String[][] board = new String[6][7];
@@ -39,7 +37,7 @@ public class Utilities {
     public static void boardAssembler() {
         String body = "";
         String line = "\u001B[34m" + lineMaker(INNER_BOARD);
-        String numberIndicator = String.format(INNER_BOARD, " 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ");
+        String numberIndicator = String.format(INNER_BOARD," 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ");
 
         for (int i = 0; i < 6; i++) {
             String filledInnerBoard = String.format(INNER_BOARD, board[i][0], board[i][1], board[i][2], board[i][3], board[i][4], board[i][5], board[i][6]);
